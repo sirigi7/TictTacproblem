@@ -1,38 +1,43 @@
 package tictac;
-
+import java.util.Arrays;
+import java.util.Scanner;
 public class TicTacToeGame {
-    public void board() {
-        char[] board = new char[11]; // create board of char[] of size 11
-        Arrays.fill(board, 1, board.length, ' '); // assign empty space to each element starting from index 1
-        // print the board to verify
-        System.out.println(Arrays.toString(board));
-        char[][] gameBoard = {{' ', ' ', ' ', ' ', ' '}, //ignoring 0th index as
-                {' ', '|', ' ', '|', ' '},
-                {'_', '+', '_', '+', '_'},
-                {' ', '|', ' ', '|', ' '},
-                {'_', '+', '_', '+', '_'},
-                {' ', '|', ' ', '|', ' '}};
-        public static void printgameboard (char[][] gameboard){
 
-            for (char[] row : gameBoard) {
-                for (char column : row) {
-                    System.out.print("  " + column);
-                }
-                System.out.println("  ");
-            }
-        }
 
-        public static void main(String[]args)
-        {
-            System.out.println("Welcome to TIC TAC TOE Game ");
-            TicTacToeGame game = new TicTacToeGame();
-            game.board();
-            printgameboard(gameBoard);
+    public class TicTacToeGame {
 
-        }
     }
+            {' ', '|', ' ', '|', ' '};
+            {'_', '+', '_', '+', '_'};
+            {' ', '|', ' ', '|', ' '};
+        public static void printgameboard(char[][] gameboard) {
+            void printgameboard(char[][] gameboard) {
 
-    private void printgameboard(char[][] gameBoard) {
-    }
+                for (char[] row : gameBoard) {
+                    for (char column : row){
+                        @@ -19,11 +19,23 @@ public static void printgameboard(char[][] gameboard) {
+                            System.out.println("  ");
+                        }
+                    }
+                    void selectLetter(){
+                        Scanner input = new Scanner(System.in);
+                        System.out.println("Select any letter in between X or O: ");
+                        String letter = input.nextLine();
+                        System.out.println("selected letter is :  "+letter);
+                        if(letter.toLowerCase().equals("x")){
+                            System.out.println("and Computer will choose: O");
+                        } else if (letter.toLowerCase().equals("o")) {
+                            System.out.println("and Computer will choose: X");
+                        }
+                    }
+
+                    public static void main(String[] args) {
+                        System.out.println("Welcome to TIC TAC TOE Game ");
+                        TicTacToeGame game = new TicTacToeGame();
+                        printgameboard(gameBoard);
+                        game.printgameboard(gameBoard);
+                        game.selectLetter();
+
+                    }
 }
 
